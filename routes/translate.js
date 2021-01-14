@@ -44,6 +44,7 @@ router.post('/Translate', (req, res) => {
         res.status(200).json(response.data);
     })
     .catch((err) => {
+        console.log(err)
         res.status(500).json(err.message);
     });
 })
