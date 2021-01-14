@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Adil - Assignment CY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <div class="translate-section">
+                
+                <div class="container">
+                    <h1 class="display-4 text-center dt">
+                       <span class="text-young">CodeYoung</span>Translator
+                    </h1>
+
+                    <h5 class="text-center ml text-dark err-msg">By Mohammed Adil</h5>
+                    <div class="h-100 mt-4">
+                     
+                        <form class="row" id="Translate" method="post">
+                            <div class="col-md-6 col-lg-6 form-line">
+                                <div class="outer-box">
+                                    <div class="form-group">
+                                        <select class="form-control" name="from">
+                                            <option value="en">English</option>
+                                            <option value="hi">Hindi</option>
+                                            <option value="kn">Kannada</option>
+                                            <option value="ta">Tamil</option>
+                                            <option value="ml">Malayalam</option>
+                                            <option value="ar">Arabic</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mt-2">
+                                        
+                                        <!-- <textarea class="text-form-control" id="original" rows="6" placeholder="Enter Your Text"></textarea> -->
+                                       <textarea maxlength="500" class="translator__field" data-gramm="false" placeholder="Type or paste text here to translate" autocomplete="off"
+                                             data-element="source_text" name="" style="height: 258px;" required></textarea>
+                                            </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="outer-box">
+                                    <div class="form-group">
+        
+                                        <select class="form-control" name="from">
+                                            <option value="en">English</option>
+                                            <option value="hi" selected>Hindi</option>
+                                            <option value="kn">Kannada</option>
+                                            <option value="ta">Tamil</option>
+                                            <option value="ml">Malayalam</option>
+                                            <option value="ar">Arabic</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mt-2">
+                                        <div class="translator__side translator__to">
+                                        <!-- <textarea class="text-form-control" id="translated" rows="6"
+                                            placeholder="Translated text will be here"></textarea> -->
+                                           
+                    <textarea maxlength="500" class="translator__field" autocomplete="off" data-element="translated_text" id="translated_text" placeholder="Translated Text will Appear here" disabled style="height: 258px;"></textarea>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div>
+                                    <img src="/assets/loader.gif" style="display:none" class="loader text-center" />
+                                    <button type="submit" class="btn btn-warning mt-4 submit">
+                                        <i class="fa fa-language" aria-hidden="true"></i>
+                                        Translate
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <div class="footer text-center">
+        <h6>  © mdadilehsan77@gmail.com</h6>
+      </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/api.js"></script>
+</body>
+
+</html>
