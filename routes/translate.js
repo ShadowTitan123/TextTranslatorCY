@@ -7,7 +7,6 @@ const { v4: uuidv4 } = require('uuid');
 const subscriptionKey = process.env.subscriptionKey;
 const endpoint = process.env.endpoint;
 
-
 // This is required if using a Cognitive Services resource.
 const location = process.env.location
 
