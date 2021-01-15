@@ -19,6 +19,7 @@ GetForm.addEventListener('submit',(e)=>{
       })
       .then(function (response) {
        if(response.status === 200){
+         console.log(response);
         document.querySelector('.loader').style.display = 'none';
         const TranslatedText = response.data[0].translations[0].text;
         console.log(TranslatedText);

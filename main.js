@@ -1,3 +1,5 @@
+'use strict';
+
 //Imports 
 const express = require('express');
 const app = express();
@@ -10,8 +12,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 
 
+//Database Connection
+const db = require('./DB/config.js');
+
 //GET Routes
 app.get('/test',require('./routes/translate.js'));
+app.get('/testDB',require('./routes/translate.js'));
 
 //Post Routes
 app.post('/Translate',require('./routes/translate.js'));
