@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios').default;
 const { v4: uuidv4 } = require('uuid');
-const { CheckCache , CreateCache , callback} = require('./db.js');
+const { CheckCache , CreateCache , callback} = require('../models/db.js');
 
 // Specify Microsoft Azure Services Keys and Endpoint
 const subscriptionKey = process.env.subscriptionKey;
@@ -33,8 +33,9 @@ router.post('/Translate', async(req, res) => {
                     }]
             }]
             console.log("Data Fetched from Cache");
-            console.log("No Call To Api Made");
+            console.log("No External Api Calls Made");
             console.log("Data Fetched from Cache and Sent To UI Sucessfully");
+            console.log("<------------------------------->");
             res.status(200).json(CacheObj);
         }
     }
@@ -67,6 +68,7 @@ router.post('/Translate', async(req, res) => {
                 const InsertCache = await CreateCache(from,to,text,response.data[0].translations[0].text);
                 if(InsertCache === true){
                     console.log("Data Inserted and Sent To UI Sucessfully");
+                    console.log("<------------------------------->");
                     res.status(200).json(response.data);
                 }else{
                     console.log("Data Failed to Insert in Cache");

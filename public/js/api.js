@@ -12,6 +12,7 @@ GetForm.addEventListener('submit',(e)=>{
 
     if(from != '' && to != '' && text != ''){
         document.querySelector('.loader').style.display = 'block';
+        document.querySelector('.translator__field').textContent = ``;
           axios.post('/Translate', {
         from: from,
         to: to,
