@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios').default;
 const { v4: uuidv4 } = require('uuid');
-const { CheckCache , CreateCache , callback} = require('../models/db.js');
+const { CheckCache, CreateCache } = require('../models/db.js');
 
 // Specify Microsoft Azure Services Keys and Endpoint
 const subscriptionKey = process.env.subscriptionKey;
@@ -12,25 +12,29 @@ const endpoint = process.env.endpoint;
 const location = process.env.location
 
 
-router.get('/test',(req, res) => {
-    console.log('test');
+router.get('/test', (req, res) => {
+    const testApi = {
+        message: "Welcome to CodeYoung Translator, API WORKS !!",
+        status: true
+    }
+    res.status(200).json(testApi);
 })
 
 
-router.post('/Translate', async(req, res) => {
+router.post('/Translate', async (req, res) => {
     const from = req.body.from;
-    const to = req.body.to
+    const to = req.body.to;
     const text = req.body.text;
 
     //Check Data in Cache Storage 
-    try{
-        const CheckInCache = await CheckCache(from,to,text);
-        if(CheckInCache != null && CheckInCache != 'Not Found' && CheckInCache != ''){
+    try {
+        const CheckInCache = await CheckCache(from, to, text);
+        if (CheckInCache != null && CheckInCache != 'Not Found' && CheckInCache != '') {
             const CacheObj = [{
-                    translations : [{
-                        text : CheckInCache[0].translation,
-                        to : CheckInCache[0].to_lang
-                    }]
+                translations: [{
+                    text: CheckInCache[0].translation,
+                    to: CheckInCache[0].to_lang
+                }]
             }]
             console.log("Data Fetched from Cache");
             console.log("No External Api Calls Made");
@@ -39,7 +43,7 @@ router.post('/Translate', async(req, res) => {
             res.status(200).json(CacheObj);
         }
     }
-    catch(err){
+    catch (err) {
         console.log(err);
         console.log("Hence Fetching from External API");
         axios({
@@ -62,36 +66,30 @@ router.post('/Translate', async(req, res) => {
             }],
             responseType: 'json'
         }).then(async function (response) {
-        
-            try{
-                 //Create a Cache from Received Response
-                const InsertCache = await CreateCache(from,to,text,response.data[0].translations[0].text);
-                if(InsertCache === true){
+            try {
+                //Create a Cache from the Received Response
+                const InsertCache = await CreateCache(from, to, text, response.data[0].translations[0].text);
+                if (InsertCache === true) {
                     console.log("Data Inserted and Sent To UI Sucessfully");
                     console.log("<------------------------------->");
                     res.status(200).json(response.data);
-                }else{
+                } else {
                     console.log("Data Failed to Insert in Cache");
-                    res.status(500).json({"message":"Error Inserting Cache Data"});
+                    res.status(500).json({ "message": "Error Inserting Cache Data" });
                 }
             }
-            catch(err){
+            catch (err) {
+                console.log(err);
                 res.status(500).json(err);
             }
-           
-        })
-        .catch((err) => {
-            console.log(err)
-            res.status(500).json(err.message);
-        });
-    }
-    
 
-  
+        })
+            .catch((err) => {
+                console.log(err)
+                res.status(500).json(err.message);
+            });
+    }
 })
 
-
-
-//Export
-
+//Export Modules
 module.exports = router;

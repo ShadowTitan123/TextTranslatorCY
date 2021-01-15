@@ -1,7 +1,8 @@
-//Imports 
+"use strict";
 
+//Imports 
 const db = require('../DB/config.js');
-var moment = require('moment'); // require
+const moment = require('moment'); // Require MomentJS Library to Format Dates
 moment().format();
 
 
@@ -20,7 +21,7 @@ const CheckCache = (from, to, text) => {
                 console.log("Data Found in Cache");
                 resolve(rows);
             } else {
-                error = "Not Found";
+                const error = "Not Found";
                 console.log("Data Not Found in Cache");
                 reject(error);
             }
@@ -41,20 +42,21 @@ const CreateCache = (from, to, text, translation) => {
     var current = new Date(); // current.getTime() = 1426060964567
     var followingDay = new Date(current.getTime() + 86400000); // + 1 day in ms
     var SetExpiryDate = followingDay.toLocaleDateString('ko-KR'); // Set Tomorrow as Expiry 
-    FormatExpiryDate = moment(SetExpiryDate, 'MM-DD-YYYY').format('YYYY-MM-DD');  // Format to YYYY-MM-DD as supported in MySQL
+    var FormatExpiryDate = moment(SetExpiryDate, 'MM-DD-YYYY').format('YYYY-MM-DD');  // Format to YYYY-MM-DD as supported in MySQL
     return new Promise((resolve, reject) => {
         db.query("INSERT INTO `tbl_translations` (`text`, `translation`, `from_lang`, `to_lang`, `status`, `expiry_date`) VALUES ( ?, ?, ?, ?, ?, ?)",
             [text, translation, from, to, 1, FormatExpiryDate], function (err, rows, fields) {
                 if (err) {
+                    reject(err);
                     throw err;
                 }
-                if (rows.affectedRows > 0) {
+                else if(rows.affectedRows > 0) {
                     console.log("Cache Created Successfully");
-                    status = true;
+                    var status = true;
                     resolve(status);
                 } else {
                     console.log("Error Inserting Record");
-                    status = false;
+                    var status = false;
                     resolve(status);
                 }
             });
@@ -63,9 +65,32 @@ const CreateCache = (from, to, text, translation) => {
 }
 
 
+const DeleteExpiredCache = (CurrentDate) => {
+    return new Promise((resolve, reject) => {
+    console.log(CurrentDate);
+        db.query("DELETE FROM `tbl_translations` WHERE expiry_date <= ? ", [CurrentDate], function (err, rows, fields) {
+            if (err) {
+                reject(err);
+                throw err;
+            }
+            else if(rows.affectedRows > 0) {
+                console.log("Expired Caches Deleted Successfully");
+                var status = true;
+                resolve(status);
+            } else {
+                console.log("No Expired Caches Found");
+                var status = false;
+                resolve(status);
+            }
+        });
+
+    });
+
+}
 
 
 module.exports = {
     CheckCache,
     CreateCache,
+    DeleteExpiredCache,
 } 
