@@ -40,7 +40,7 @@ const CheckCache = (from, to, text) => {
 const CreateCache = (from, to, text, translation) => {
     console.log("Creating Cache From Received Data");
     var current = new Date(); // current.getTime() = 1426060964567
-    var followingDay = new Date(current.getTime() + 86400000); // + 1 day in ms
+    var followingDay = new Date(current.getTime() + 86400000); // + 1 day in ms (add expiry time here. Currently Set to One Day)
     var SetExpiryDate = followingDay.toLocaleDateString('ko-KR'); // Set Tomorrow as Expiry 
     var FormatExpiryDate = moment(SetExpiryDate, 'MM-DD-YYYY').format('YYYY-MM-DD');  // Format to YYYY-MM-DD as supported in MySQL
     return new Promise((resolve, reject) => {

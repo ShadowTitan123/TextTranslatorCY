@@ -36,12 +36,18 @@ const DeleteCaches = (req,res,next)=>{
 //GET Routes
 app.get('/test',require('./routes/translateController.js'));
 app.get('/getAllSupportedLanguages',require('./routes/languageController.js'))
+app.get('/GetAllCaches',DeleteCaches,require('./routes/cacheController.js'))
 
 
 //Post Routes
 app.post('/Translate',DeleteCaches,require('./routes/translateController.js'));
 
 
+//Put Routes
+app.put('/UpdateLanguages',require('./routes/languageController.js'));
+
+//Delete Routes
+app.delete('/DeleteAllCache',DeleteCaches,require('./routes/cacheController.js'));
 
 // Listen to Port 
 app.listen(PORT, () => {
