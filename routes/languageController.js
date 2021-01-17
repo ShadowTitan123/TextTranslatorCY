@@ -3,6 +3,11 @@ const router = express.Router();
 const { GetAllSupportedLanguages , UpdateLanguages} = require('../models/languages.js');
 
 
+/*
+ * Receives Request To Get All Languages and Calls The language Model to Fetch Data
+ * Returns a JSON RESPONSE to Client on Successfull Fetch 
+ */
+
 router.get('/GetAllSupportedLanguages',async(req, res) => {
     try{
         const GetLanguages = await GetAllSupportedLanguages();
@@ -19,6 +24,11 @@ router.get('/GetAllSupportedLanguages',async(req, res) => {
     }
 })
 
+
+/*
+ * Receives Request To Update All Languages and Calls The language Model to Update Data
+ * Returns a JSON RESPONSE to Client on Successfull Updation 
+ */
 
 router.put('/UpdateLanguages',async(req, res) => {
     try{
@@ -44,5 +54,5 @@ router.put('/UpdateLanguages',async(req, res) => {
 })
 
 
-
+//Export 
 module.exports = router;

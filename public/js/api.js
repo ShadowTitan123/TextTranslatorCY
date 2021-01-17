@@ -19,6 +19,7 @@ GetForm.addEventListener('submit', (e) => {
     } else {
       document.querySelector('.NoInternet').style.display = 'block';
     }
+    // Post Request to Server to Translate data
     axios.post('/Translate', {
       from: from,
       to: to,
@@ -57,7 +58,7 @@ GetForm.addEventListener('submit', (e) => {
 });
 
 
-
+// Populate The Select Box with Supported Languages 
 
 document.addEventListener('DOMContentLoaded', () => {
   axios.get('/GetAllSupportedLanguages')

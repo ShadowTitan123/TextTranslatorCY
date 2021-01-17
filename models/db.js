@@ -64,6 +64,10 @@ const CreateCache = (from, to, text, translation) => {
 
 }
 
+/*
+ * Deletes Caches Which are Expired 
+ * Returns a promise if Data Gets Deleted from Database.
+ */
 
 const DeleteExpiredCache = (CurrentDate) => {
     return new Promise((resolve, reject) => {

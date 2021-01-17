@@ -5,8 +5,8 @@ const db = require('../DB/config.js');
 
 
 /*
- * Checks if the specified Cache Exists in Table 
- * Returns a promise with Cache Data if Found in Database.
+ * Gets All The Supported Languages From Database
+ * Returns a promise with Language Data if Found in Database.
  */
 
 const GetAllSupportedLanguages = () => {
@@ -32,8 +32,8 @@ const GetAllSupportedLanguages = () => {
 
 
 /*
- * Gets All Caches From Table
- * Returns a promise with Cache Data if Found in Database.
+ * Updates The Language List on User Input 
+ * Returns a promise with Status True If Successfully Modified in Table 
  */
 
 const UpdateLanguages = (ActiveLanguages) => {
@@ -64,7 +64,7 @@ const UpdateLanguages = (ActiveLanguages) => {
 
 }
 
-
+//Exports
 module.exports = {
     GetAllSupportedLanguages,
     UpdateLanguages

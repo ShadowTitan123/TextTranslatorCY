@@ -11,7 +11,10 @@ const endpoint = process.env.endpoint;
 // This is required if using a Cognitive Services resource.
 const location = process.env.location
 
-
+/*
+ * Receives Request To Test The Get Route 
+ * Returns a JSON RESPONSE to Client on Success 
+ */
 router.get('/test', (req, res) => {
     const testApi = {
         message: "Welcome to CodeYoung Translator, API WORKS !!",
@@ -20,6 +23,13 @@ router.get('/test', (req, res) => {
     res.status(200).json(testApi);
 })
 
+
+/*
+ * Receives Request To Translate The Given Data 
+ * Checks For Cache in DB and Returns If Found 
+ * Makes an Api Fetch Request To Microsoft Translator API if Cache Not Found 
+ * Returns a JSON RESPONSE to Client on Successful Fetch  
+ */
 
 router.post('/Translate', async (req, res) => {
     const from = req.body.from;

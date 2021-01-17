@@ -6,6 +6,7 @@ const connection = mysql.createConnection({
   database: 'cytranslator'
 })
 
+// Connect to MySQL
 connection.connect()
 
 module.exports = connection;

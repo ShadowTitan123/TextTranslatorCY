@@ -1,7 +1,7 @@
-// Get Form and Output Area
-
+// Get Table
 const table1 = document.querySelector('#table1');
 
+// Get All Languages for Configure Panel 
 document.addEventListener('DOMContentLoaded', () => {
   axios.get('/GetAllSupportedLanguages')
     .then(function (response) {
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Update Languages On User Input 
 
 document.querySelector('#UpdateLangs').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -47,22 +48,22 @@ document.querySelector('#UpdateLangs').addEventListener('submit', (e) => {
     checkedArray.push(value.name);
   })
   console.log(checkedArray);
-  if(typeof checkedArray !== 'undefined' && checkedArray.length > 0){
-  axios.put('/UpdateLanguages', {
-    activeLanguages: JSON.stringify(checkedArray)
-  
-  }).then((response) => {
-    if(response.status === 200){
-      console.log(response);
-      location.reload();
-    }else{
-      console.log("Server error");
-    }
-  })
-    .catch((err) => {
-      console.log(err);
+  if (typeof checkedArray !== 'undefined' && checkedArray.length > 0) {
+    axios.put('/UpdateLanguages', {
+      activeLanguages: JSON.stringify(checkedArray)
+
+    }).then((response) => {
+      if (response.status === 200) {
+        console.log(response);
+        location.reload();
+      } else {
+        console.log("Server error");
+      }
     })
-  }else{
+      .catch((err) => {
+        console.log(err);
+      })
+  } else {
     console.log("Select Minimum 1 Language");
     alert("Please select atleast One Language");
   }

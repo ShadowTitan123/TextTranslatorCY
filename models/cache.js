@@ -1,6 +1,6 @@
 "use strict";
 
-//Imports 
+//Import DB config 
 const db = require('../DB/config.js');
 
 /*
@@ -32,8 +32,8 @@ const GetAllCaches = () => {
 
 
 /*
- * Gets All Caches From Table
- * Returns a promise with Cache Data if Found in Database.
+ * Deletes All Caches From Table
+ * Returns a promise if Data Gets Deleted from Database.
  */
 
 const DeleteAllCache = () => {
@@ -58,7 +58,7 @@ const DeleteAllCache = () => {
 
 }
 
-
+//Exports
 module.exports = {
     GetAllCaches,
     DeleteAllCache

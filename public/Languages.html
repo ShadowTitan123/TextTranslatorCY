@@ -28,8 +28,8 @@
                         aria-haspopup="true" aria-expanded="false"><span style="font: size 2px;"> Configure </span></a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/">Home</a>
-                        <a class="dropdown-item active" href="Cache.html">Manage Caches</a>
-                        <a class="dropdown-item" href="Languages.html">Manage Languages</a>
+                        <a class="dropdown-item" href="Cache.html">Manage Caches</a>
+                        <a class="dropdown-item active" href="Languages.html">Manage Languages</a>
                     </div>
                 </li>
             </ul>
@@ -43,38 +43,30 @@
                 <li class="nav-item">
                     <a class="nav-link active home" data-toggle="tab" href="#home">All Languages</a>
                 </li>
-
-                <!-- <li class="nav-item">
-          <a class="nav-link Delete"  data-toggle="tab" href="#Delete">Flush All Caches</a>
-        </li> -->
-
-
             </ul>
 
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade show active" id="home">
                     <form id="UpdateLangs" method="post">
-                    <table class="table table-hover table-responsive">
-                        <thead>
-                            <tr>
-                                <th scope="col">id</th>
-                                <th scope="col">Language Title</th>
-                                <th scope="col">Language Code</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table1">
-                            <!-- Data Fetched From API  -->
-                        </tbody>
-                       
-                    </table>
-                    <button type="submit" class="btn btn-primary "> Update All</button>
-                </form>
+                        <table class="table table-hover table-responsive">
+                            <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Language Title</th>
+                                    <th scope="col">Language Code</th>
+                                    <th scope="col">Supported Languages</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table1">
+                                <!-- Data Fetched From API  -->
+                            </tbody>
+
+                        </table>
+                        <button type="submit" class="btn btn-primary "> Update All</button>
+                    </form>
                 </div>
             </div>
-
         </div>
-
     </main>
 
 
@@ -91,5 +83,4 @@
 
     </script>
 </body>
-
 </html>
