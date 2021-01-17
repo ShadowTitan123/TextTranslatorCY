@@ -4,7 +4,7 @@
   "description": "Assignment for Code Young By Mohammed Adil (mdadilehsan77@gmail.com)",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js",
+    "start": "node main.js", 
     "cy": "nodemon main.js"
   },
   "author": "Mohammed Adil - mdadilehsan77@gmail.com",
