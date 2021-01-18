@@ -71,7 +71,7 @@ To Test the Api Requests
 To Test the Api Requests 
 
 ```
-Give an example
+npm run test
 ```
 
 
