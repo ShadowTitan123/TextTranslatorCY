@@ -62,18 +62,6 @@ PORT=3000
 
 If All Set, You can run the Application using your browser : eg - localhost:3000
 
-## Running the tests
-
-To Test the Api Requests 
-
-### Break down into end to end tests
-
-To Test the Api Requests 
-
-```
-npm run test
-```
-
 
 ## Built With
 
