@@ -111,3 +111,8 @@ Makes an Asyncronous Request To Fetch All Supported Languages and The Test Expec
 and also checks For Empty Array 
 
 
+## View All Testing Results/Analysis in Web Browser
+
+Navigate to Coverage/Iconv-report/index.html
+
+Run This File On your Browser.

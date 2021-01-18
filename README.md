@@ -80,6 +80,7 @@ Give an example
 * [NodeJS](https://nodejs.org/en/) - Javascript Runtime
 * [ExpressJS](https://expressjs.com/) - Web Server
 * [MYSQL](https://www.mysql.com/) - Database 
+* [JEST-JS](https://jestjs.io/en/) - NodeJS Testing Framework 
 * [AxiosJS](https://www.npmjs.com/package/axios) - For HTTP Requests
 * [MomentJS](https://momentjs.com/) - For Date Formatting 
 * [VanillaJS](http://vanilla-js.com/) - For UI Handling 
@@ -97,7 +98,7 @@ I used [Git](https://git-scm.com/) for versioning.
 I have Used the JEST-JS Framework to Test My Api Calls and Functions [Unit Testing]
 Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 
-All The Test Files are present in a folder call Test 
+All The Test Files are present in a folder call Test
 
 To Run All Tests, Make Sure Jest is Installed.
 To Test All Our Files, Simple Run
@@ -133,6 +134,11 @@ Uncomment the Test Function To Run this test
 Makes an Asyncronous Request To Fetch All Supported Languages and The Test Expects The Function to Return a Populated Array 
 and also checks For Empty Array 
 
+
+
+## View All Testing Results/Analysis in Web Browser
+
+Navigate to Coverage/Iconv-report/index.html
 
 ## Author
 
