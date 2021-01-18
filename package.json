@@ -4,8 +4,9 @@
   "description": "Assignment for Code Young By Mohammed Adil (mdadilehsan77@gmail.com)",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js", 
-    "cy": "nodemon main.js"
+    "start": "node main.js",
+    "cy": "nodemon main.js",
+    "test":"jest --coverage"
   },
   "author": "Mohammed Adil - mdadilehsan77@gmail.com",
   "license": "MIT",
@@ -16,5 +17,8 @@
     "moment": "^2.29.1",
     "mysql": "^2.18.1",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }

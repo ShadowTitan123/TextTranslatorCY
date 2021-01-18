@@ -90,6 +90,50 @@ Give an example
 
 I used [Git](https://git-scm.com/) for versioning.
 
+
+
+## TESTING  
+
+I have Used the JEST-JS Framework to Test My Api Calls and Functions [Unit Testing]
+Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+
+All The Test Files are present in a folder call Test 
+
+To Run All Tests, Make Sure Jest is Installed.
+To Test All Our Files, Simple Run
+
+```
+npm run test
+```
+
+Test Cases 
+
+#### GetAllCaches 
+
+Makes an Asyncronous Request To Fetch All Caches and The Test Expects The Function to Return 
+an Array and also checks For Empty Array 
+
+#### CreateCache 
+
+Makes an Asyncronous Request To Create a Cache in Database and Expects status to be True on Creation
+Provide sample parameters to test
+
+#### DeleteExpiredCache 
+
+Makes an Asyncronous Request To Delete all expired caches in Database and Expects status to be True on deletion
+Uncomment the Test Function To Run this test 
+
+#### DeleteAllCache 
+
+Makes an Asyncronous Request To Delete all caches in Database and Expects status to be True on deletion
+Uncomment the Test Function To Run this test 
+
+#### GetAllLanguages 
+
+Makes an Asyncronous Request To Fetch All Supported Languages and The Test Expects The Function to Return a Populated Array 
+and also checks For Empty Array 
+
+
 ## Author
 
 * **Mohammed Adil** - Email : mdadilehsan77@gmail.com
