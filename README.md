@@ -1,11 +1,19 @@
 # CodeYoung Translator With Caching
 
-CodeYoung Translator is a Text-Translation Web Application Developed Using NodeJS,ExpressJS,VanillaJS and MySQL Which Translates your Text into any Desired Language.
-It uses the Microsoft Translator Api for Accurate Text-Translation.
+CodeYoung Translator is a Simple Text-Translation Web Application Developed Using NodeJS,ExpressJS,VanillaJS and MySQL Which Translates your Text into any Desired Language. It Also Saves the API Responses in Cache for Further Use.
+This Application uses the Microsoft Azure Services to Enable Microsoft Translation API.
 
 ## Getting Started
 
-In Order to Run this Application on your LocalMachine you will Require Node and an Apache Server.
+
+### Run Live Version
+
+In Order to Run Live Version of this Application. VISIT [HERE](https://nodejs.org/en/) 
+
+
+### Run Locally 
+
+In Order to Run this Application on your Localmachine, you will Require Node and an Apache Server.
 
 ### Prerequisites
 
@@ -42,8 +50,8 @@ const connection = mysql.createConnection({
 ```
 
 
-Make Sure Create a Database Named 'cytranslator' and Import the File given in
-Files/translator.js
+Make Sure Create a Database Named 'cytranslator' and Import the File provided in
+Files/cytranslator.sql
 
 
 To Give API keys and Port Number, Navigate to .env file in root directory
@@ -69,20 +77,20 @@ Give an example
 
 ## Built With
 
-* [NodeJS](https://nodejs.org/en/) - Runtime
+* [NodeJS](https://nodejs.org/en/) - Javascript Runtime
 * [ExpressJS](https://expressjs.com/) - Web Server
 * [MYSQL](https://www.mysql.com/) - Database 
 * [AxiosJS](https://www.npmjs.com/package/axios) - For HTTP Requests
 * [MomentJS](https://momentjs.com/) - For Date Formatting 
 * [VanillaJS](http://vanilla-js.com/) - For UI Handling 
 * [HTML/CSS](https://www.w3schools.com/html/) - For Views
-
+* [Microsoft-Translation](https://www.microsoft.com/en-us/translator/business/trial/) - Translation Api By Azure Services
 
 ## Versioning
 
-We use [Git](https://git-scm.com/) for versioning.
+I used [Git](https://git-scm.com/) for versioning.
 
-## Authors
+## Author
 
 * **Mohammed Adil** - Email : mdadilehsan77@gmail.com
 
@@ -92,6 +100,6 @@ We use [Git](https://git-scm.com/) for versioning.
 This project is licensed under the MIT License 
 ## Acknowledgments
 
-* Thanks for CodeYoung Team For Assigning This Assignment 
+* Thanks for CodeYoung Team For Assigning This Assignment.
 
 
