@@ -8,7 +8,7 @@ This Application uses the Microsoft Azure Services to Enable Microsoft Translati
 
 ### Run Live Version
 
-In Order to Run Live Server of This Application. VISIT - [HERE](https://nodejs.org/en/) 
+In Order to Run Live Version of this Application. VISIT [HERE](https://nodejs.org/en/) 
 
 
 ### Run Locally 
@@ -51,7 +51,7 @@ const connection = mysql.createConnection({
 
 
 Make Sure Create a Database Named 'cytranslator' and Import the File provided in
-Files/translator.js
+Files/cytranslator.sql
 
 
 To Give API keys and Port Number, Navigate to .env file in root directory
@@ -84,13 +84,13 @@ Give an example
 * [MomentJS](https://momentjs.com/) - For Date Formatting 
 * [VanillaJS](http://vanilla-js.com/) - For UI Handling 
 * [HTML/CSS](https://www.w3schools.com/html/) - For Views
-
+* [Microsoft-Translation](https://www.microsoft.com/en-us/translator/business/trial/) - Translation Api By Azure Services
 
 ## Versioning
 
-We use [Git](https://git-scm.com/) for versioning.
+I used [Git](https://git-scm.com/) for versioning.
 
-## Authors
+## Author
 
 * **Mohammed Adil** - Email : mdadilehsan77@gmail.com
 
