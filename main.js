@@ -7,6 +7,7 @@ require('dotenv').config();
 const path = require('path');
 const PORT = process.env.PORT || 3000; 
 const { DeleteExpiredCache } = require('./models/db.js');
+require('newrelic');
 const moment = require('moment'); // Require MomentJS Library to Format Dates
 moment().format();
 
